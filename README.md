@@ -48,6 +48,9 @@ The backend API will be available at `http://localhost:8090`.
 ### Interactive CLI Client
 You can run the interactive scripts directly to simulate a client:
 ```bash
+cd scripts
+```
+```bash
 ./test_flow.sh
 ```
 This utility lets you register, log in, view wallet & transaction histories, simulate cash deposits, view stock prices, place or cancel orders, track portfolio holdings, and modify your MPIN.
