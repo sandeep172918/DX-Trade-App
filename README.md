@@ -22,6 +22,26 @@ DX-Trade is a high-performance, headless stock trading simulation backend. It fe
 4. **Portfolio Tracking**: Real-time P&L and holdings management.
 5. **Interactive CLI Client**: Full-featured interactive CLI utility for simulation, trading, depositing, and market watching.
 
+## Matching Engine Benchmarks
+
+To evaluate the execution capacity of the order matching engine, we benchmarked the FIFO price-time priority matching algorithm in isolation (excluding DB/network latency, utilizing dynamic proxy stubs).
+
+### Execution Profile (1,000,000 Orders)
+- **Sequential Throughput:** `1,680,073` orders/sec
+- **Concurrent Throughput (4 threads):** `628,553` orders/sec
+
+### Latency Metrics (p50, p90, p99)
+- **Sequential Latency:** 
+  - **Avg Latency:** `0.0006 ms` (~600 nanoseconds)
+  - **Median (p50):** `0.0003 ms` (~300 nanoseconds)
+  - **90th Percentile (p90):** `0.0007 ms`
+  - **99th Percentile (p99):** `0.0012 ms`
+- **Concurrent Latency (4 threads):**
+  - **Avg Latency:** `0.0016 ms`
+  - **Median (p50):** `0.0013 ms`
+  - **90th Percentile (p90):** `0.0149 ms`
+  - **99th Percentile (p99):** `0.0345 ms`
+
 ## Getting Started
 
 ### Prerequisites

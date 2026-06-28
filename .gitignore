@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+benchmark
+/benchmark
+cp.txt
